@@ -67,7 +67,7 @@ class ExecutorStrategy(Strategy):
 
 
 class ThreadPoolExecutorStrategy(ExecutorStrategy):
-    executor_factory = ThreadPoolExecutor
+    executor_factory = lambda: ThreadPoolExecutor(max_workers=100)
 
 
 class ProcessPoolExecutorStrategy(ExecutorStrategy):
